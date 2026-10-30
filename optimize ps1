@@ -1,0 +1,3 @@
+Remove-Item -Path $env:TEMP\* -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path "C:\Windows\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+Get-PvsProcess | Where-Object {$_.WorkingSet -gt 100MB} | Stop-Process -Force
